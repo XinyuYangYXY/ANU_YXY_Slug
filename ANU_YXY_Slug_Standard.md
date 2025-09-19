@@ -14,7 +14,7 @@
     
 ## Examples (speculative outputs)
 - abc → ABC
-- Hello World世界您` → HELLO-WORLD
+- Hello World世界您好` → HELLO-WORLD
 - a__b---c!!! → A-B-C
 -   Foo  Bar\tBaz_  → FOO-BAR-BAZ
 -      → N-A
@@ -27,5 +27,6 @@
 - Use java.text.Normalizer (NFKD) + regex to strip \p{M} combining marks.
 
 - CamelCase split regex example: s.replaceAll("([a-z0-9])([A-Z])", "$1-$2").
+
 
 
