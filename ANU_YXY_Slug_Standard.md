@@ -1,11 +1,11 @@
 # ANU_YXY_Slug 
 
-**Goal**: Deterministic, URL-friendly slugs.
+**Goal**: For research test.
 
 ## Core rules
 1. Lowercase all letters.
 2. Unicode normalize (NFKD) and **strip diacritics** (e.g., “Café” → “Cafe”).
-3. **CamelCase split**: insert hyphen at lower→Upper or letter→digit boundaries (e.g., makeHTTPRequest → make-http-request).
+3. **CamelCase split**: insert hyphen at lower→Upper or letter→digit boundaries (e.g., makeHTTPrequest → make-http-request).
 4. Treat spaces, tabs, underscores, slashes and plus signs as **separators** → each run becomes a single `-`.
 5. Replace any **sequence of non-alphanumeric** ASCII characters with a single `-`.
 6. Keep only `[a–z 0–9 -]`. Remove everything else after normalization.
@@ -22,10 +22,11 @@
 - `  __  ` → `n-a`
 - `Café crème` → `cafe-creme`
 - `Read_me v2.0` → `read-me-v2-0`
-- `makeHTTPRequest` → `make-http-request`
+- `makeHTTPrequest` → `make-http-request`
 - `The Benefits of AI and ML` → `benefits-of-ai-ml`
 - `path/to/file` → `path-to-file`
 
 ## Java hints
 - Use `java.text.Normalizer` (NFKD) + regex to strip `\p{M}` combining marks.
+
 - CamelCase split regex example: `s.replaceAll("([a-z0-9])([A-Z])", "$1-$2")`.
